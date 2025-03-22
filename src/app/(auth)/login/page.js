@@ -1,6 +1,7 @@
 "use client";
 import FormContainer from "@/components/FormContainer";
 import { useLogin } from "@/hooks/auth/useLogin";
+import { Loader2 } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -42,9 +43,10 @@ const Loginpage = () => {
           </div>
           <button
             disabled={loading}
-            className="text-xs px-4 py-2 w-full bg-blue-900 text-white rounded-md cursor-pointer disabled:cursor-default"
+            className="text-xs px-4 py-2 w-full bg-blue-900 text-white rounded-md cursor-pointer disabled:cursor-default disabled:bg-blue-900/60 flex items-center justify-center gap-1"
             onClick={handelLogin}
           >
+            {loading && <Loader2 className="animate-spin w-4 h-4"/>}
             Login
           </button>
           <Link href="/forgot" rel="noopener noreferrer">

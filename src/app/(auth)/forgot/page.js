@@ -2,6 +2,7 @@
 import FormContainer from "@/components/FormContainer";
 import { useResetPassword } from "@/hooks/auth/useResetPassword";
 import { userSendOTP } from "@/hooks/auth/useSendOTP";
+import { Loader2 } from "lucide-react";
 import React, { useState } from "react";
 
 const Forgotpage = () => {
@@ -49,9 +50,10 @@ const Forgotpage = () => {
           />
           <button
             disabled={loading}
-            className="text-xs px-4 py-2 w-full bg-blue-900 text-white rounded-md cursor-pointer disabled:cursor-default"
+            className="text-xs px-4 py-2 w-full bg-blue-900 text-white rounded-md cursor-pointer disabled:cursor-default disabled:bg-blue-900/60 flex items-center justify-center gap-1"
             onClick={handelSendOtp}
           >
+            {loading && <Loader2 className="animate-spin w-4 h-4"/>}
             Send Reset Token
           </button>
 
@@ -75,9 +77,10 @@ const Forgotpage = () => {
           />
           <button
             disabled={loadingSubmit}
-            className="text-xs px-4 py-2 w-full bg-blue-900 text-white rounded-md cursor-pointer disabled:cursor-default"
+            className="text-xs px-4 py-2 w-full bg-blue-900 text-white rounded-md cursor-pointer disabled:cursor-default disabled:bg-blue-900/60 flex items-center justify-center gap-1"
             onClick={handelSubmit}
           >
+            {loadingSubmit && <Loader2 className="animate-spin w-4 h-4"/>}
             Submit
           </button>
         </div>
