@@ -52,7 +52,7 @@ const FormContainer = ({ children }) => {
             />
           </Link>
           <Link
-            href="https://line.me/ti/p/~@bluestonethailand"
+            href="https://www.youtube.com/channel/UCQ3mRpetmm5Ek-LLdTjwaNQ"
             target="_blank"
             rel="noopener noreferrer"
           >
