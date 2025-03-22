@@ -1,6 +1,7 @@
 "use client";
 import FormContainer from "@/components/FormContainer";
 import { useRegister } from "@/hooks/auth/useRegister";
+import { Loader2 } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -58,9 +59,10 @@ const Registerpage = () => {
           />
           <button
             disabled={loading}
-            className="text-xs px-4 py-2 w-full bg-blue-900 text-white rounded-md cursor-pointer disabled:cursor-default"
+            className="text-xs px-4 py-2 w-full bg-blue-900 text-white rounded-md cursor-pointer disabled:cursor-default disabled:bg-blue-900/60 flex items-center justify-center gap-1"
             onClick={handelRegister}
           >
+            {loading && <Loader2 className="animate-spin w-4 h-4"/>}
             Register
           </button>
         </div>
